@@ -1,0 +1,19 @@
+{
+  "name": "sakhteman-project",
+  "version": "1.0.0",
+  "description": " Complexity Calucator ",
+  "main": "app.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "auto-bind": "^1.2.1",
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "hbs": "^4.0.1"
+  }
+}
