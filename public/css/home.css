@@ -17,53 +17,6 @@ body{
 }
 
 
-
-.plot-area{
-    
-    display: flex;
-    justify-content: center;
-    width: 75%;
-    margin: 1rem auto 0;
-}
-
-#plot {
-    display: flex;
-    align-items: center;
-    position: relative;
-}
-
-.plot-area .form-control {
-    display: inline;
-    width: auto;
-}
-
-
-.hidden {
-    display: none;
-}
-
-.calculating {
-    position: absolute;
-    right: -6.7rem;
-   /* display: flex;*/
-    align-items: center;
-}
-
-.calculating small {
-
-    font-style: italic;
-}
-  
-
-.header{
-
-    background-color: #e9ecef;
-    position: absolute;
-    width: 100%;
-    height: 11%;
-}  
-
-
 .editorArea{
 
     position: absolute;
@@ -74,13 +27,6 @@ body{
     border-radius: 9px;
 }
 
-textarea#editor{
-    /*code*/
-    width: 100%;
-    height: 100%;
-    border: 1px solid cadetblue;
-    padding: 10px
-}
 
 
 .SendButton{
@@ -91,8 +37,21 @@ textarea#editor{
     height: 40px;
     position: absolute;
     left: 40%;
-    bottom: 17px
+    bottom: 17px ;
+    cursor: pointer;
 }
+
+.SendButton:hover{
+    background-color: white ;
+    color: black ;
+}
+
+.SendButton:active{
+
+     position: absolute;
+     bottom: 10px;
+}
+
 
 .FormArea{
 
@@ -104,4 +63,4 @@ textarea#editor{
 }
 
 
-/* coded  by AmirAhmadzadeh */ 
+/* coded  by AmirAhmadzadeh */

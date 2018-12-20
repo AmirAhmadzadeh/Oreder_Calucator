@@ -1,31 +1,53 @@
-
-
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="/css/home.css">
-    <title>    Oreder   Calucator </title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
+	<link rel="stylesheet" data-name="vs/editor/editor.main" href="/min/vs/editor/editor.main.css">
+    <link rel="stylesheet" href="/css/home.css" >
 </head>
 <body>
- 
-  <div class="wrapper">
 
-      <form action="/calcute" method="post" class="FormArea" >
-            <div class="editorArea" >
-                    <textarea name="code" 
-                                    id="editor" 
-                                    cols="60"
-                                    rows="30"
-                                    placeholder="put youre code here ... " 
-                    ></textarea>
+	<h2>Put you code here</h2>
+    <div id="container" class="editorArea" ></div>
 
-            </div> 
-            <input type="submit" value="send" class="SendButton">
-     </form>     
-  </div>     
+   
+	
+	    <form action="/calcute" method="post">
+			<input type="hidden" name="code" id="codes" value="not set"/> 
+            <input type="submit" id="subBtn"  value="cal" class="SendButton" >
+		</form>
+
+
+      
+	<script>var require = { paths: { 'vs': '/min/vs' } };</script>
+	<script src="/min/vs/loader.js"></script>
+	<script src="/min/vs/editor/editor.main.nls.js"></script>
+	<script src="/min/vs/editor/editor.main.js"></script>
+    
+	<script>
+				var editor = monaco.editor.create(document.getElementById('container'), {
+				value: ['console.log(`*`);'].join('\n'),
+				language: 'javascript'
+				});
+
+	</script>
+	  	<script src="/js/jquery.min.js"></script>
+    <script>
+
+	   
+	    $('#subBtn').click((e) => {
+		  console.log(`clicked`);		
+	     const value  = window.editor.getValue() ;
+		
+		    
+		    $('#codes').val(value);
+	    	console.log($('#code').val());
+
+		})
+
+
+	</script>
 
 </body>
 </html>
