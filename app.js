@@ -2,7 +2,6 @@ const express = require('express');
 
 const app     = express();
 
-
 const config  = require('./config/mainConfig');
 
 const hbs     = require('hbs');
@@ -49,7 +48,7 @@ app.get('/compare' , (req ,res) => {
 app.listen(config.port ,(err) => {
 
     if(!err){
-        console.log(`app run on server ${config.port}`);
+        console.log(`app run on : localhost:${config.port}`);
     }
 })
 
