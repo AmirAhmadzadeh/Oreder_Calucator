@@ -22,6 +22,11 @@ app.use(express.static(path.join(__dirname,'public')));
 app.set('view engine' , 'hbs');
 
 
+hbs.registerPartials(path.join(__dirname,'views/partials') ,(err) => {
+
+    if(err) console.log(`[we have error in setting partials]`);
+}) ;
+
 app.use(bodyParser.json());
 
 
@@ -33,18 +38,13 @@ app.get('/' , (req ,res ) => {
 
 });
 
-
-
 app.post('/calcute' , Controller.calcute); 
-
-
 
 app.get('/compare' , (req ,res) => {
 
         // code
-
+        // in prugress
 });
-
 
 app.listen(config.port ,(err) => {
 
