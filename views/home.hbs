@@ -1,11 +1,13 @@
-
 {{>homeHeader}}
 
-	<h2>Put you code here</h2>
-    <div id="container" class="editorArea" ></div>
 
-	    {{>postForm}}
-
+	<h1 class="title">Please write youre function</h1>
+ 
+     <div id="container" style="width:70%;  height:500px ; margin:0 10px ; position:relative;top:150px ; padding:20px"></div>
+     <div class="back-drop"></div>
+	 <div class="modal">
+          <div id="loader" class="loader"></div>
+     </div>
+    {{>postForm}}
     {{>editorScripts}}
-	
 {{>footer}}

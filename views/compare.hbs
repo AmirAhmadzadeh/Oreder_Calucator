@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" data-name="vs/editor/editor.main" href="/vsCode/vs/editor/editor.main.css">
+    <link rel="stylesheet" href="/css/compare.css">
+    <title>compare</title>
+</head>
+<body>
+    
+    
+    <div class="main">
+         <h1 class="title">
+         compare
+     </h1>
+     <div id="editor-1" style="width:35%;  height:500px ; margin:0 10px ; position:relative;top:150px ; padding:20px ;display: inline-block;"></div>
+     <div id="editor-2" style="width:35%;  height:500px ; margin:0 100px ; position:relative;top:150px ;padding:20px ;display: inline-block;"></div>
+
+    </div>
+
+
+    <div class="back-drop"></div>
+	 <div class="modal">
+          <div id="loader" class="loader"></div>
+     </div>
+      <form action="/compare" method="post">
+			<input type="hidden" name="code"         id="code" value="not set" /> 
+   			<input type="hidden" name="code_compare" id="code_compare" value="not set" /> 
+            <input type="submit" id="subBtn"  value="Compare" class="SendButton" >
+      </form>
+
+    <script>var require = { paths: { 'vs': '/vsCode/vs' } };</script>
+    <script src="/vsCode/vs/loader.js"></script>
+    <script src="/vsCode/vs/editor/editor.main.nls.js"></script>
+    <script src="/vsCode/vs/editor/editor.main.js"></script>
+	<script>
+               
+				var editor1 = monaco.editor.create(document.getElementById('editor-1'), {
+						value: [`// first function`].join('\n'),
+						language: 'javascript',
+						theme:'vs-dark'	
+				});
+
+                var editor2 = monaco.editor.create(document.getElementById('editor-2'), {
+						value: [`// second function`].join('\n'),
+						language: 'javascript',
+                    	theme:'vs-dark'	
+
+			 	});
+	</script>
+   
+   	<script src="/js/jquery.min.js"></script>
+    <script>
+
+	    $('#subBtn').click((e) => {		
+
+                $('#code').val(editor1.getValue()) ;    
+                $('#code_compare').val(editor2.getValue());
+                $('#loader').addClass('loader')	;
+                $('.back-drop').css('display' , 'block');
+                $('.modal').css('transform' ,'translateY(0)');
+            
+		});
+
+    </script>
+
+</body>
+</html>

@@ -1,29 +1,28 @@
 
     <script>var require = { paths: { 'vs': '/vsCode/vs' } };</script>
-
-
     <script src="/vsCode/vs/loader.js"></script>
 	<script src="/vsCode/vs/editor/editor.main.nls.js"></script>
 	<script src="/vsCode/vs/editor/editor.main.js"></script>
     
 	<script>
 				var editor = monaco.editor.create(document.getElementById('container'), {
-				value: ['console.log(`*`);'].join('\n'),
-				language: 'javascript'
+						value: [`// code...`].join('\n'),
+						language: 'javascript',
+						theme:'vs-dark'	
 				});
 
 	</script>
-		<script src="/js/jquery.min.js"></script>
+	<script src="/js/jquery.min.js"></script>
     <script>
 
-	   
-	    $('#subBtn').click((e) => {
-		  console.log(`clicked`);		
-	     const value  = window.editor.getValue() ;
-		
-		    
+	    $('#subBtn').click((e) => {		
+			console.log(`clicked`) ;
+	        const value  = window.editor.getValue() ; 
 		    $('#codes').val(value);
-	    	//console.log($('#code').val());
-		})
-
+			$('#loader').addClass('loader')	;
+	     	$('.back-drop').css('display' , 'block');
+			$('.modal').css('transform' ,'translateY(0)');
+					
+		});
+    
 	</script>
